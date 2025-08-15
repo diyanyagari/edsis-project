@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="250" height="250" viewBox="0 0 250 250">
+  <defs>
+    <clipPath id="clip-Registed">
+      <rect width="250" height="250"/>
+    </clipPath>
+  </defs>
+  <g id="Registed" clip-path="url(#clip-Registed)">
+    <path id="description_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24" d="M192.78-748.879h65.56v-16.39H192.78Zm0-32.78h65.56v-16.39H192.78ZM176.39-716.1a15.783,15.783,0,0,1-11.576-4.815A15.781,15.781,0,0,1,160-732.489V-863.61a15.783,15.783,0,0,1,4.814-11.576A15.784,15.784,0,0,1,176.39-880h65.561l49.17,49.17v98.341a15.781,15.781,0,0,1-4.815,11.576,15.782,15.782,0,0,1-11.575,4.815Zm57.365-106.536V-863.61H176.39v131.121h98.341v-90.146ZM176.39-863.61v0Z" transform="translate(-100.561 923.05)" fill="#5f6368"/>
+  </g>
+</svg>

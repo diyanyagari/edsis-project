@@ -1,4 +1,11 @@
-<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M1 3L1 17C1 18.1046 1.89543 19 3 19H17C18.1046 19 19 18.1046 19 17V3C19 1.89543 18.1046 1 17 1H3C1.89543 1 1 1.89543 1 3Z" stroke="#5F6368" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M13 19L13 1M8 13L5 10L8 7" stroke="#5F6368" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="250" height="250" viewBox="0 0 250 250">
+  <defs>
+    <clipPath id="clip-Hide">
+      <rect width="250" height="250"/>
+    </clipPath>
+  </defs>
+  <g id="Hide" clip-path="url(#clip-Hide)">
+    <path id="left_panel_open_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24" d="M228.91-782.679l45.857,45.857ZM142.928-633.643a22.079,22.079,0,0,1-16.193-6.735A22.079,22.079,0,0,1,120-656.572v-160.5a22.078,22.078,0,0,1,6.735-16.193A22.078,22.078,0,0,1,142.928-840h160.5a22.078,22.078,0,0,1,16.193,6.735,22.079,22.079,0,0,1,6.735,16.193v160.5a22.08,22.08,0,0,1-6.735,16.193,22.079,22.079,0,0,1-16.193,6.735Zm34.393-22.929v-160.5H142.928v160.5Zm22.929,0H303.428v-160.5H200.25Zm-22.929,0h0Z" transform="translate(348.178 -611.822) rotate(180)" fill="#5f6368"/>
+    <path id="Polygon_25" data-name="Polygon 25" d="M49,0,98,51H0Z" transform="translate(67.5 174) rotate(-90)" fill="#5f6368"/>
+  </g>
 </svg>

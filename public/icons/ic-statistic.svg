@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="250" height="250" viewBox="0 0 250 250">
+  <defs>
+    <clipPath id="clip-Statistic">
+      <rect width="250" height="250"/>
+    </clipPath>
+  </defs>
+  <g id="Statistic" clip-path="url(#clip-Statistic)">
+    <g id="Group_37534" data-name="Group 37534" transform="translate(4092.298 7327.215)">
+      <path id="table_chart_view_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24" d="M127.162-674.061l-12.227-12.226L175.2-746.768,205.764-716.2l45.2-45.2,12.445,12.445-57.642,57.423L175.2-722.1Zm-29.694-8.733a16.822,16.822,0,0,1-12.336-5.131A16.82,16.82,0,0,1,80-700.261V-822.533a16.82,16.82,0,0,1,5.131-12.336A16.822,16.822,0,0,1,97.467-840H219.738a16.822,16.822,0,0,1,12.336,5.131,16.82,16.82,0,0,1,5.131,12.336v36.681H97.467Zm0-120.524H219.738v-19.214H97.467Zm0,0v0Z" transform="translate(-4139 -6445.185)" fill="#5f6368"/>
+    </g>
+  </g>
+</svg>
