@@ -1,0 +1,19 @@
+.app-tabs {
+  ::ng-deep .mat-mdc-tab-list {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  ::ng-deep .mat-mdc-tab {
+    margin: 0 !important;
+  }
+
+  ::ng-deep .mat-mdc-tab:hover {
+    background-color: transparent !important;
+  }
+
+  // Remove ripple hover background
+  ::ng-deep .mdc-tab__ripple::before {
+    background-color: transparent !important;
+  }
+}

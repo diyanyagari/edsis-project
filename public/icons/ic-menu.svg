@@ -1,0 +1,11 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="250" height="250" viewBox="0 0 250 250">
+  <defs>
+    <clipPath id="clip-Menu">
+      <rect width="250" height="250"/>
+    </clipPath>
+  </defs>
+  <g id="Menu" clip-path="url(#clip-Menu)">
+    <path id="view_comfy_alt_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24" d="M80-807.684V-880h72.316v72.316Zm18.079-18.079h36.158V-861.92H98.079ZM80-699.209v-72.316h72.316v72.316Zm18.079-18.079h36.158v-36.158H98.079Zm90.4-90.4V-880h72.317v72.316Zm18.079-18.079h36.158V-861.92H206.554ZM188.475-699.209v-72.316h72.317v72.316Zm18.079-18.079h36.158v-36.158H206.554ZM134.237-825.763ZM134.237-753.446ZM206.554-825.763ZM206.554-753.446Z" transform="translate(-45.396 914.604)" fill="#5f6368"/>
+  </g>
+</svg>

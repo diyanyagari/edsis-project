@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="250" height="250" viewBox="0 0 250 250">
+  <defs>
+    <clipPath id="clip-Filter">
+      <rect width="250" height="250"/>
+    </clipPath>
+  </defs>
+  <g id="Filter" clip-path="url(#clip-Filter)">
+    <path id="filter_alt_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24" d="M232.025-633.978a10.041,10.041,0,0,1-7.393-2.984,10.042,10.042,0,0,1-2.983-7.393v-62.259L161.465-783.4a9.879,9.879,0,0,1-1.168-10.894Q163.022-800,169.766-800H315.035q6.745,0,9.468,5.708a9.877,9.877,0,0,1-1.167,10.894l-60.182,76.785v62.259a10.042,10.042,0,0,1-2.983,7.393,10.042,10.042,0,0,1-7.393,2.984Zm10.376-79.9,51.363-65.371H191.038ZM242.4-713.877Z" transform="translate(-110.363 848.66)" fill="currentColor"/>
+  </g>
+</svg>

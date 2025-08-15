@@ -1,0 +1,83 @@
+<div class="bg-card w-full flex flex-auto flex-col shadow xl:col-span-2 h-[calc(100vh-4rem)]">
+    <fuse-vertical-navigation class="bg-white print:hidden fixed top-16 right-0 z-[110] border-l-2" [mode]="'side'"
+        [appearance]="isPanelMenuCollapsed ? 'dense' : 'default'" [name]="'MenuNavigation'"
+        [navigation]="panelNavigation" [opened]="!isScreenSmall" [autoCollapse]="false" [position]="'right'">
+        <ng-container fuseVerticalNavigationHeader>
+            <div class="flex w-full items-center justify-between p-4 pl-6">
+                <span *ngIf="!isPanelMenuCollapsed || isHovered" class="text-xl font-medium text-[#202124]">
+                    Leads
+                </span>
+                <button [matTooltip]="isPanelMenuCollapsed ? 'Open Menu' : 'Close Menu'" [ngClass]="{
+                                'rotate-180': isPanelMenuCollapsed
+                            }" class="hover:bg-[#F4F6F9] p-2 shrink-0 transition-transform duration-300 ease-in-out"
+                    (click)="panelMenuToggleCollapse()">
+                    <img src="icons/ic-panel-menu.svg" alt="Panel Menu Icon" class="w-4 h-4" />
+                </button>
+            </div>
+        </ng-container>
+    </fuse-vertical-navigation>
+
+    <div [ngClass]="{
+        'w-[calc(100%-80px)]': isPanelMenuCollapsed,
+        'w-[calc(100%-280px)]': !isPanelMenuCollapsed
+    }" class="">
+        <!-- header -->
+        <div class="text-[#5F6368] font-light w-full p-6 pb-0">
+            Sales Management / Leads / Registed / Detail
+        </div>
+
+        <!-- summary -->
+        <div class="flex flex-row mt-4 px-6">
+            <div class="flex flex-row items-center gap-4">
+                <div class="h-10 w-10 rounded-full bg-gray-400"></div>
+                <div class="flex flex-col">
+                    <h2 class="text-xl font-medium">Asep Baharudin</h2>
+                    <div class="flex flex-row gap-5 items-center">
+                        <div class="flex flex-row gap-2 items-center">
+                            <div class="">Status</div>
+                            <div class="flex flex-row items-center gap-2">
+                                <div class="h-2 w-2 bg-[#2E58F0] rounded-full"></div>
+                                <span>Registed
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex flex-row gap-2 items-center">
+                            <div class="">Category</div>
+                            <div
+                                class="px-3 py-1 rounded-sm bg-[#EBF2FD] text-[#2E58F0] flex flex-row items-center gap-2">
+                                <img [src]="'icons/ic-cold.svg'" alt="Category Icon" class="w-4 h-4" />
+                                <span>Cold</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ml-auto flex flex-row items-center gap-3">
+                <button mat-stroked-button [matTooltip]="'Edit Leads'"
+                    class="rounded-md aspect-square p-1 w-11 !min-w-11 !h-11 !min-h-11">
+                    <mat-icon class="icon-size-4" [svgIcon]="'heroicons_outline:pencil'"></mat-icon>
+                </button>
+                <button mat-stroked-button [matTooltip]="'Cancel Leads'"
+                    class="rounded-md py-1 px-2 gap-1 !h-11 !min-h-11">
+                    <mat-icon class="icon-size-5" matPrefix [svgIcon]="'heroicons_outline:x-mark'"></mat-icon>
+                    Cancel
+                </button>
+                <button
+                    class="bg-[#2E58F0] h-11 hover:bg-[#2048D8] rounded-md text-white flex flex-row items-center px-3">
+                    <mat-icon class="text-white icon-size-5" [svgIcon]="'heroicons_outline:plus'"></mat-icon>
+                    <span class="ml-2 mr-1">Add Activity</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- detail information -->
+        <div class="app-tabs">
+            <mat-tab-group mat-stretch-tabs="false" fitInkBarToContent mat-align-tabs="start">
+                <mat-tab label="First"> Content 1 </mat-tab>
+                <mat-tab label="Second"> Content 2 </mat-tab>
+                <mat-tab label="Third"> Content 3 </mat-tab>
+            </mat-tab-group>
+        </div>
+    </div>
+
+</div>

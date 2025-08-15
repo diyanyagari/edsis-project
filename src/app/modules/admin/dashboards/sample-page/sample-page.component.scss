@@ -1,0 +1,63 @@
+.mat-mdc-paginator .mat-mdc-paginator-container {
+    justify-content: space-between;
+}
+
+.sample-table .mat-mdc-header-row .mat-mdc-header-cell {
+    background-color: #f8fafc;
+}
+
+.sample-table .mat-mdc-header-cell,
+.mat-mdc-cell {
+    min-width: 150px; // force horizontal scroll if content exceeds
+    box-sizing: border-box;
+    white-space: nowrap;
+}
+
+.sample-table-wrapper {
+    // height: 500px;
+    // height: calc(100% - 214px);
+    // height: calc(100vh - 189px);
+    height: fit-content;
+    overflow: auto;
+    box-shadow: none;
+}
+
+.sample-table {
+    background-color: #f8fafc;
+}
+
+.sample-table .mat-mdc-table-sticky {
+  z-index: 100; // higher than hover row z-index
+  position: sticky; // keep sticky behavior
+  background-color: inherit; // maintain background
+}
+
+.sample-table .mat-mdc-row:hover {
+  z-index: 1; // keep low so sticky cell wins
+}
+
+.sample-table .mat-mdc-row:hover .mat-mdc-cell {
+  background-color: #F9FBFC; // hover color
+}
+
+.sample-table .mat-mdc-row:hover .mat-mdc-table-sticky {
+  background-color: #F9FBFC; // don't override sticky bg
+}
+
+.mat-mdc-form-field-subscript-wrapper {
+  display: none;
+}
+
+.grow-on-focus {
+  transition: width 0.3s ease-in-out;
+  width: 160px;
+}
+
+.grow-on-focus:focus-within {
+  width: 220px;
+}
+
+.calendar-input .mat-mdc-form-field-infix {
+    height: 2.75rem;
+    min-height: 2.75rem !important;
+}

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="927" height="301" viewBox="0 0 927 301">
+  <defs>
+    <clipPath id="clip-Edis_Logo">
+      <rect width="927" height="301"/>
+    </clipPath>
+  </defs>
+  <g id="Edis_Logo" data-name="Edis Logo" clip-path="url(#clip-Edis_Logo)">
+    <g id="Group_37386" data-name="Group 37386" transform="translate(10.434 -8.961)">
+      <g id="Group_37387" data-name="Group 37387" transform="translate(0 -10.369)">
+        <path id="Path_70725" data-name="Path 70725" d="M22.635,63.641h0A63.639,63.639,0,0,1,86.276,0h122.5a63.642,63.642,0,0,1-63.641,63.641Z" transform="translate(69.036 47.647)" fill="#2e58f0"/>
+        <path id="Path_70726" data-name="Path 70726" d="M22.635,108.979h0A63.639,63.639,0,0,1,86.276,45.338h122.5a63.642,63.642,0,0,1-63.641,63.641Z" transform="translate(69.036 185.927)" fill="#2e58f0"/>
+        <path id="Path_70727" data-name="Path 70727" d="M55.327,86.993H0A63.642,63.642,0,0,1,63.641,23.352h164A63.642,63.642,0,0,1,164,86.993Z" transform="translate(0 118.87)" fill="#2e58f0"/>
+        <text id="eDsis" transform="translate(344.937 228)" fill="#2e58f0" font-size="218" font-family="Roboto-Bold, Roboto" font-weight="700"><tspan x="0" y="0">eDsis</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>

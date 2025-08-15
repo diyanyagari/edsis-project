@@ -1,0 +1,88 @@
+<!-- Loading bar -->
+<fuse-loading-bar></fuse-loading-bar>
+
+<!-- Navigation -->
+<fuse-vertical-navigation class="bg-white print:hidden fixed z-20" [mode]="'side'"
+    [appearance]="isCollapsed ? 'dense' : 'default'" [name]="'naisoMainNavigation'" [navigation]="navigation"
+    [opened]="!isScreenSmall">
+    <!-- Navigation header hook -->
+    <ng-container fuseVerticalNavigationContentHeader>
+        <div class="flex w-full items-center p-4 pl-6">
+            <!-- Burger Icon Bro -->
+            <!-- <button mat-icon-button (click)="toggleCollapse()"> -->
+            <button mat-icon-button>
+                <mat-icon [svgIcon]="'heroicons_outline:bars-3'"></mat-icon>
+            </button>
+        </div>
+    </ng-container>
+</fuse-vertical-navigation>
+
+<!-- Wrapper -->
+<div [ngClass]="{
+    'pl-[80px]': isCollapsed,
+    'pl-[280px]': !isCollapsed
+}" class="flex min-w-0 relative z-10 flex-auto flex-col">
+    <!-- Header -->
+    <div [ngClass]="{
+            'w-[calc(100%-80px)]': isCollapsed,
+            'w-[calc(100%-280px)]': !isCollapsed
+        }"
+        class="bg-card fixed z-49 flex h-16 flex-0 items-center px-4 dark:border-b dark:bg-transparent border-b-2 border-[#f4f6f9] md:px-6 print:hidden">
+        <div class="flex flex-row gap-4 items-center">
+            <img src="images/logo/logo-edis.png" alt="EDIS Icon" class="w-32 h-10" />
+            <h1 class="text-2xl">Sales Management</h1>
+        </div>
+
+        <!-- Custom Components -->
+        <div class="ml-auto flex items-center gap-2 sm:gap-3">
+            <div [matTooltip]="'Search'" class="rounded-sm hover:bg-[#F4F6F9] h-8 w-8">
+                <img src="icons/ic-search.svg" alt="Search Icon" class="w-full h-full" />
+            </div>
+            <div [matTooltip]="'Menu'" class="rounded-sm flex items-center justify-center hover:bg-[#F4F6F9] h-8 w-8">
+                <img src="icons/ic-menu.svg" alt="Menu Icon" class="w-6 h-6" />
+            </div>
+            <div class="py-2 px-2 gap-1 flex flex-row items-center justify-center border border-[#D9DDE6] rounded-sm">
+                <img src="icons/ic-helpdesk.svg" alt="Helpdesk Icon" class="w-5 h-5" />
+                <p class="select-none">Helpdesk</p>
+            </div>
+            <div [matTooltip]="'Profile'" class="rounded-sm hover:bg-[#F4F6F9] h-8 w-8">
+                <div
+                    class="rounded-full aspect-square flex items-center justify-center font-medium text-white bg-[#3B855D]">
+                    SA
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="flex flex-auto flex-col mt-16">
+        @if (true) {
+        <div class="flex flex-row h-full">
+            <fuse-vertical-navigation class="bg-white print:hidden fixed top-16 z-[110]" [mode]="'side'"
+                [appearance]="isPanelMenuCollapsed ? 'dense' : 'default'" [name]="'MenuNavigation'"
+                [navigation]="panelNavigation" [opened]="!isScreenSmall" [autoCollapse]="false"
+                (mouseenter)="onPanelNavbarHover(true)" (mouseleave)="onPanelNavbarHover(false)">
+                <ng-container fuseVerticalNavigationHeader>
+                    <div class="flex w-full items-center justify-between p-4 pl-6">
+                        <span *ngIf="!isPanelMenuCollapsed || isHovered" class="text-xl font-medium text-[#202124]">
+                            Leads
+                        </span>
+                        <button [matTooltip]="isPanelMenuCollapsed ? 'Open Menu' : 'Close Menu'" [ngClass]="{
+                                'rotate-180': isPanelMenuCollapsed
+                            }" class="hover:bg-[#F4F6F9] p-2 shrink-0 transition-transform duration-300 ease-in-out"
+                            (click)="panelMenuToggleCollapse()">
+                            <img src="icons/ic-panel-menu.svg" alt="Panel Menu Icon" class="w-4 h-4" />
+                        </button>
+                    </div>
+                </ng-container>
+            </fuse-vertical-navigation>
+            <div [ngClass]="{
+                'pl-[80px]': isPanelMenuCollapsed,
+                'pl-[280px]': !isPanelMenuCollapsed
+            }" class="flex flex-1 flex-col h-full overflow-hidden">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+        }
+    </div>
+</div>

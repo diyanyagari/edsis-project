@@ -1,0 +1,17 @@
+button {
+  border-radius: 6px;
+  padding: 0 12px;
+  &.active {
+    background-color: #2E58F0;
+    color: white;
+  }
+}
+
+.btn-filter {
+    height: 2.75rem;
+    min-height: 2.75rem !important;
+}
+
+.filter-container {
+  box-shadow: 0px 0px 10px #00000029;
+}
