@@ -66,14 +66,14 @@ export const panelNavigationStatic: FuseNavigationItem[] = [
                 title: 'Registed',
                 type: 'basic',
                 icon: 'ic-registed',
-                link: '/dashboards/project',
+                link: '/dashboards/sample-page',
             },
             {
                 id: 'dataLeads.followup',
                 title: 'Follow Up',
                 type: 'basic',
                 icon: 'ic-follow-up',
-                link: '/dashboards/analytics',
+                link: '/dashboards/follow-up',
             },
              {
                 id: 'dataLeads.cancel',

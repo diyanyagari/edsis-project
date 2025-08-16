@@ -65,11 +65,12 @@
                         <span *ngIf="!isPanelMenuCollapsed || isHovered" class="text-xl font-medium text-[#202124]">
                             Leads
                         </span>
-                        <button [matTooltip]="isPanelMenuCollapsed ? 'Expand' : 'Collapse'" [matTooltipPosition]="'after'" [ngClass]="{
+                        <button [matTooltip]="isPanelMenuCollapsed ? 'Expand' : 'Collapse'"
+                            [matTooltipPosition]="'after'" [ngClass]="{
                                 'rotate-180': isPanelMenuCollapsed
                             }" class="hover:bg-[#F4F6F9] p-2 shrink-0 transition-transform duration-300 ease-in-out"
                             (click)="panelMenuToggleCollapse()">
-                            <mat-icon [svgIcon]="'ic-panel-menu'"></mat-icon>
+                            <mat-icon class="icon-size-5" [svgIcon]="'ic-panel-menu'"></mat-icon>
                         </button>
                     </div>
                 </ng-container>

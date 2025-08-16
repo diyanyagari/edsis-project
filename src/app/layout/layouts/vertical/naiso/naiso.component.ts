@@ -29,6 +29,7 @@ import { Subject, takeUntil } from 'rxjs';
 @Component({
     selector: 'naiso-layout',
     templateUrl: './naiso.component.html',
+    styleUrl: './naiso.component.scss',
     encapsulation: ViewEncapsulation.None,
     imports: [
         FuseLoadingBarComponent,

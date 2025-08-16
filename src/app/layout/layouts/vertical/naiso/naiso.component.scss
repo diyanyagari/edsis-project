@@ -1,0 +1,14 @@
+.fuse-vertical-navigation-item {
+    font-weight: 400 !important;
+}
+
+.fuse-vertical-navigation-item.fuse-vertical-navigation-item-active {
+    background-color: #EBF2FD !important; /* dark gray background */
+    color: #2E58F0 !important;           /* yellow text */
+    // border-left: 4px solid #fbbf24; /* custom indicator */
+}
+
+/* Optional: change icon color */
+.fuse-vertical-navigation-item.fuse-vertical-navigation-item-active mat-icon {
+    color: #2E58F0 !important;
+}

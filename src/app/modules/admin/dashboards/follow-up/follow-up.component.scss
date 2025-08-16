@@ -1,0 +1,119 @@
+.mat-mdc-paginator .mat-mdc-paginator-container {
+    justify-content: space-between;
+}
+
+.sample-table .mat-mdc-header-row .mat-mdc-header-cell {
+    background-color: #f8fafc;
+    border-bottom: 1px solid #D9DDE6;
+    border-top: 1px solid #D9DDE6;
+}
+
+.sample-table .mat-mdc-header-cell,
+.mat-mdc-cell {
+    min-width: 150px; // force horizontal scroll if content exceeds
+    box-sizing: border-box;
+    white-space: nowrap;
+}
+
+.sample-table-wrapper {
+    height: fit-content;
+    overflow: auto;
+    box-shadow: none;
+}
+
+.sample-table {
+    background-color: #f8fafc;
+}
+
+.sample-table .mat-mdc-table-sticky {
+  z-index: 100; // higher than hover row z-index
+  position: sticky; // keep sticky behavior
+  background-color: inherit; // maintain background
+}
+
+.sample-table .mat-mdc-row:hover {
+  z-index: 1; // keep low so sticky cell wins
+}
+
+.sample-table .mat-mdc-row:hover .mat-mdc-cell {
+  background-color: #F9FBFC; // hover color
+}
+
+.sample-table .mat-mdc-row:hover .mat-mdc-table-sticky {
+  background-color: #F9FBFC; // don't override sticky bg
+}
+
+.mat-mdc-form-field-subscript-wrapper {
+  display: none;
+}
+
+.grow-on-focus {
+  transition: width 0.3s ease-in-out;
+  width: 160px;
+}
+
+.grow-on-focus:focus-within {
+  width: 220px;
+}
+
+.calendar-input .mat-mdc-form-field-infix {
+    height: 2.75rem;
+    min-height: 2.75rem !important;
+}
+
+// ==== paginator style ====
+.app-paginator {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #6b7280; /* text color */
+  padding: 0.5rem 0;
+}
+
+/* Rows per page dropdown */
+.app-paginator .mat-paginator-page-size {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Dropdown styling */
+.app-paginator .mat-select-trigger {
+  font-size: 14px;
+  min-width: 50px;
+}
+
+/* Pagination info text */
+.app-paginator .mat-paginator-range-label {
+  font-size: 14px;
+  color: #6b7280;
+  margin-left: 0.5rem;
+}
+
+/* Navigation buttons */
+.app-paginator .mat-paginator-navigation-previous,
+.app-paginator .mat-paginator-navigation-next,
+.app-paginator .mat-paginator-navigation-first,
+.app-paginator .mat-paginator-navigation-last {
+  border: 1px solid #D9DDE6;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #374151;
+  width: 32px;
+  height: 32px;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
+/* Hover effect */
+.app-paginator .mat-paginator-navigation-previous:hover,
+.app-paginator .mat-paginator-navigation-next:hover {
+  background-color: #F3F4F6;
+}
+
+/* Hide unused parts if necessary */
+.app-paginator .mat-paginator-page-size-label {
+  font-weight: 500;
+  margin-right: 0.25rem;
+}

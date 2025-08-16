@@ -87,6 +87,7 @@ export const appRoutes: Route[] = [
                 {path: 'finance', loadChildren: () => import('app/modules/admin/dashboards/finance/finance.routes')},
                 {path: 'crypto', loadChildren: () => import('app/modules/admin/dashboards/crypto/crypto.routes')},
                 {path: 'sample-page', loadChildren: () => import('app/modules/admin/dashboards/sample-page/sample-page.routes')},
+                {path: 'follow-up', loadChildren: () => import('app/modules/admin/dashboards/follow-up/follow-up.routes')},
             ]},
 
             // Apps
