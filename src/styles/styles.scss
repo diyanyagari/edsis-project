@@ -9,3 +9,7 @@ html, body {
 .mat-mdc-header-row {
   background-color: #f25151;
 }
+
+.mat-mdc-dialog-container .mdc-dialog__surface {
+  border-radius: 5px !important;
+}

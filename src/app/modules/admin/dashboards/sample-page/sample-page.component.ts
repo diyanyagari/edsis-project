@@ -19,6 +19,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatOptionModule, MatRippleModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatDialog } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
@@ -31,6 +32,7 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { RouterLink } from '@angular/router';
 import { fuseAnimations } from '@fuse/animations';
+import { AddLeadsModalComponent } from 'app/shared/components/add-leads-modal/add-leads-modal';
 import { SharedModule } from 'app/shared/shared.module';
 import { Observable, of, Subject } from 'rxjs';
 import {
@@ -180,6 +182,8 @@ export class SamplePageComponent implements OnInit, AfterViewInit, OnDestroy {
     pagination: InventoryPagination;
     isLoading: boolean = false;
 
+    constructor(private _matDialog: MatDialog) {}
+
     recentTransactionsTableColumns: string[] = [
         'transactionId',
         'date',
@@ -254,5 +258,15 @@ export class SamplePageComponent implements OnInit, AfterViewInit, OnDestroy {
 
     onStatusFilterClick() {
         console.log('wwwww');
+    }
+
+    addNewLeads(): void {
+        this._matDialog.open(AddLeadsModalComponent, {
+            autoFocus: false,
+            disableClose: true,
+            data: {
+                note: {},
+            },
+        });
     }
 }

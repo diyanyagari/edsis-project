@@ -37,8 +37,9 @@ import {
     CategoriesType,
     InventoryPagination,
     SampleDataType,
-    StatusesType,
 } from '../sample-page/sampledata.type';
+import { MatDialog } from '@angular/material/dialog';
+import { AddLeadsModalComponent } from 'app/shared/components/add-leads-modal/add-leads-modal';
 
 const categories: CategoriesType[] = ['cold', 'warm', 'hot'];
 
@@ -136,6 +137,8 @@ export class FollowUpPageComponent implements OnInit, AfterViewInit, OnDestroy {
     pagination: InventoryPagination;
     isLoading: boolean = false;
 
+    constructor(private _matDialog: MatDialog) {}
+
     recentTransactionsTableColumns: string[] = [
         'transactionId',
         'date',
@@ -209,5 +212,15 @@ export class FollowUpPageComponent implements OnInit, AfterViewInit, OnDestroy {
 
     onStatusFilterClick() {
         // console.log('wwwww');
+    }
+
+    addNewLeads(): void {
+        this._matDialog.open(AddLeadsModalComponent, {
+            autoFocus: false,
+            disableClose: true,
+            data: {
+                note: {},
+            },
+        });
     }
 }

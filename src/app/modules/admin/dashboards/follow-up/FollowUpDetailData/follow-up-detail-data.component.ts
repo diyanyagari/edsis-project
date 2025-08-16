@@ -1,6 +1,6 @@
 import { ScrollStrategy, ScrollStrategyOptions } from '@angular/cdk/overlay';
 import { CdkScrollable } from '@angular/cdk/scrolling';
-import { DOCUMENT, Location, NgClass, NgIf } from '@angular/common';
+import { DatePipe, DOCUMENT, Location, NgClass, NgIf } from '@angular/common';
 import {
     ChangeDetectionStrategy,
     Component,
@@ -27,6 +27,28 @@ import {
 } from '@fuse/components/navigation';
 import { FuseFindByKeyPipe } from '@fuse/pipes/find-by-key/find-by-key.pipe';
 import { Category, Course } from 'app/modules/admin/apps/academy/academy.types';
+interface DummyActivityType {
+    date: string;
+    status: string;
+    name: string;
+    description: string;
+}
+const DummyActivity: DummyActivityType[] = [
+    {
+        date: '2025-08-14T13:22:37.274Z',
+        status: 'Calling',
+        name: 'Andi Malarangeng',
+        description:
+            'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s',
+    },
+    {
+        date: '2025-08-13T15:13:37.274Z',
+        status: 'Calling',
+        name: 'Andi Malarangeng',
+        description:
+            'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+    },
+];
 
 @Component({
     selector: 'follow-up-detail-data',
@@ -49,6 +71,7 @@ import { Category, Course } from 'app/modules/admin/apps/academy/academy.types';
         MatFormFieldModule,
         NgIf,
         MatCardModule,
+        DatePipe,
     ],
 })
 export class FollowUpDetailDataComponent implements OnInit, OnDestroy {
@@ -67,6 +90,7 @@ export class FollowUpDetailDataComponent implements OnInit, OnDestroy {
     private _overlay: HTMLElement;
     private _scrollStrategy: ScrollStrategy =
         this._scrollStrategyOptions.block();
+    activities: DummyActivityType[] = DummyActivity
     // private _unsubscribeAll: Subject<any> = new Subject<any>();
 
     /**

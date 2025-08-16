@@ -47,12 +47,68 @@
             <!-- Content -->
             @if (opened) {
             <div class="flex flex-auto h-full overflow-hidden">
-                <div class="flex flex-auto h-full pb-10 items-center gap-4 justify-center flex-col overflow-hidden">
-                    <img class="h-32 w-32 mb-3" [src]="'icons/img-empty-activity.png'" alt="Empty Activity" />
-                    <span class="text-[#404253] whitespace-nowrap font-medium">No Activity!</span>
-                    <p class="text-center text-[#5F6368] whitespace-nowrap">It seems that activity data is not <br>
-                        available at this time.</p>
-                    <button class="text-[#2C67F6] whitespace-nowrap">Add Activity</button>
+                <div class="flex flex-auto h-full pb-10 px-6 gap-4 flex-col overflow-hidden">
+                    <div class="">
+                        <ol>
+                            <!-- Activities -->
+                            @for (
+                            activity of activities;
+                            track trackByFn(i, activity);
+                            let i = $index;
+                            let first = $first;
+                            let last = $last
+                            ) {
+                            <!-- Date separator -->
+                            <!-- @if (
+                                first ||
+                                !isSameDay(
+                                activity.date,
+                                activities[i - 1].date
+                                )
+                                ) {
+                                <li class="relative flex py-7">
+                                    <div
+                                        class="relative rounded-full bg-primary px-8 py-2 text-md font-medium leading-5 text-on-primary">
+                                        {{
+                                        getRelativeFormat(activity.date)
+                                        | titlecase
+                                        }}
+                                    </div>
+                                </li>
+                                } -->
+
+                            <!-- Activity -->
+                            <li class="relative flex py-7">
+                                <!-- Line -->
+                                <div [ngClass]="{
+                                    'h-dvh': last,
+                                    'h-full': !last,
+                                }" class="absolute left-16 top-7 -ml-px w-0.5 bg-[#2E58F0]">
+                                </div>
+
+                                <div class="relative flex flex-auto">
+                                    <div class="text-[#5F6368] flex mr-2 flex-col font-light text-sm text-right">
+                                        <span class="">{{ activity.date | date: 'dd/MM/yy' }}</span>
+                                        <span class="">{{ activity.date | date:'HH:mm' }}</span>
+                                    </div>
+
+                                    <!-- Bullet -->
+                                    <div
+                                        class="mr-4 flex h-3 w-3 border-[3px] shadow-[0px_0px_0px_2px_rgba(46,88,240,1)] border-white shrink-0 items-center justify-center rounded-full bg-[#2E58F0]">
+                                    </div>
+                                    <div class="flex flex-col gap-2 min-w-44">
+                                        <span
+                                            class="text-[#2E58F0] w-fit py-0.5 px-1.5 text-md rounded-md bg-[#EBF2FD]">Calling</span>
+                                        <div class="flex flex-col gap-3 flex-shrink-0 text-[#202124]">
+                                            <label class="font-medium">{{activity.name}}</label>
+                                            <p>{{activity.description}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            }
+                        </ol>
+                    </div>
                 </div>
             </div>
             }

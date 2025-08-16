@@ -24,7 +24,8 @@
                 <mat-date-range-picker #picker></mat-date-range-picker>
             </mat-form-field>
             <app-button-filter label="Filter" (clickFilter)="onStatusFilterClick()"></app-button-filter>
-            <button class="bg-[#2E58F0] h-11 hover:bg-[#2048D8] rounded-md text-white flex flex-row items-center px-3">
+            <button class="bg-[#2E58F0] h-11 hover:bg-[#2048D8] rounded-md text-white flex flex-row items-center px-3"
+            (click)="addNewLeads()">
                 <mat-icon class="text-white" [svgIcon]="'heroicons_outline:plus'"></mat-icon>
                 <span class="ml-2 mr-1">Add Leads</span>
             </button>
