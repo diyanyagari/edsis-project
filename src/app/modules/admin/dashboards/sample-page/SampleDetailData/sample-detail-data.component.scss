@@ -1,19 +1,42 @@
-.app-tabs {
-  ::ng-deep .mat-mdc-tab-list {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
+.app-tabs .mat-mdc-tab-header .mat-mdc-tab-label-container {
+  margin: 0 !important;
+}
 
-  ::ng-deep .mat-mdc-tab {
-    margin: 0 !important;
-  }
+.no-shadow.mat-mdc-card {
+  box-shadow: none !important;
+}
 
-  ::ng-deep .mat-mdc-tab:hover {
-    background-color: transparent !important;
-  }
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
 
-  // Remove ripple hover background
-  ::ng-deep .mdc-tab__ripple::before {
-    background-color: transparent !important;
-  }
+.form-grid .label {
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.6);
+  margin-right: 10px;
+  display: inline-block;
+  width: 120px; /* Adjust width as needed for alignment */
+}
+
+.form-grid .value {
+  font-weight: 400;
+  position: relative;
+}
+
+.form-grid .value::before {
+  content: ':';
+  padding-right: 2px;
+}
+
+.full-row {
+  grid-column: 1 / -1; /* This makes the "Issue" field span both columns */
+}
+
+.vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  color: #202124;
 }

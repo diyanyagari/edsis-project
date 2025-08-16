@@ -51,5 +51,104 @@ export class IconsService {
                 'icons/heroicons-mini.svg'
             )
         );
+
+        // ======== APP ICON ========
+
+        matIconRegistry.addSvgIcon(
+            'ic-filter',
+            domSanitizer.bypassSecurityTrustResourceUrl('icons/ic-filter.svg')
+        );
+
+        matIconRegistry.addSvgIcon(
+            'ic-hot',
+            domSanitizer.bypassSecurityTrustResourceUrl('icons/ic-hot.svg')
+        );
+
+        matIconRegistry.addSvgIcon(
+            'ic-dashboard',
+            domSanitizer.bypassSecurityTrustResourceUrl(
+                'icons/ic-dashboard.svg'
+            )
+        );
+
+        matIconRegistry.addSvgIcon(
+            'ic-cold',
+            domSanitizer.bypassSecurityTrustResourceUrl('icons/ic-cold.svg')
+        );
+
+        matIconRegistry.addSvgIcon(
+            'ic-warm',
+            domSanitizer.bypassSecurityTrustResourceUrl('icons/ic-warm.svg')
+        );
+
+        matIconRegistry.addSvgIcon(
+            'ic-warm',
+            domSanitizer.bypassSecurityTrustResourceUrl('icons/ic-warm.svg')
+        );
+
+        matIconRegistry.addSvgIcon(
+            'ic-close',
+            domSanitizer.bypassSecurityTrustResourceUrl('icons/ic-close.svg')
+        );
+
+        matIconRegistry.addSvgIcon(
+            'ic-double-check',
+            domSanitizer.bypassSecurityTrustResourceUrl(
+                'icons/ic-double-check.svg'
+            )
+        );
+
+        matIconRegistry.addSvgIcon(
+            'ic-follow-up',
+            domSanitizer.bypassSecurityTrustResourceUrl(
+                'icons/ic-follow-up.svg'
+            )
+        );
+
+        matIconRegistry.addSvgIcon(
+            'ic-mail-open',
+            domSanitizer.bypassSecurityTrustResourceUrl(
+                'icons/ic-mail-open.svg'
+            )
+        );
+
+        matIconRegistry.addSvgIcon(
+            'ic-pending',
+            domSanitizer.bypassSecurityTrustResourceUrl('icons/ic-pending.svg')
+        );
+
+        matIconRegistry.addSvgIcon(
+            'ic-panel-menu',
+            domSanitizer.bypassSecurityTrustResourceUrl(
+                'icons/ic-panel-menu.svg'
+            )
+        );
+
+        matIconRegistry.addSvgIcon(
+            'ic-registed',
+            domSanitizer.bypassSecurityTrustResourceUrl('icons/ic-registed.svg')
+        );
+
+        matIconRegistry.addSvgIcon(
+            'ic-statistic',
+            domSanitizer.bypassSecurityTrustResourceUrl(
+                'icons/ic-statistic.svg'
+            )
+        );
+
+        matIconRegistry.addSvgIcon(
+            'ic-cancel',
+            domSanitizer.bypassSecurityTrustResourceUrl('icons/ic-cancel.svg')
+        );
+
+        matIconRegistry.addSvgIcon(
+            'ic-search',
+            domSanitizer.bypassSecurityTrustResourceUrl('icons/ic-search.svg')
+        );
+
+        matIconRegistry.addSvgIcon(
+            'ic-calendar',
+            domSanitizer.bypassSecurityTrustResourceUrl('icons/ic-calendar.svg')
+        );
     }
 }

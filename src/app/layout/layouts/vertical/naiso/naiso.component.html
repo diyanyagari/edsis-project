@@ -2,17 +2,15 @@
 <fuse-loading-bar></fuse-loading-bar>
 
 <!-- Navigation -->
-<fuse-vertical-navigation class="bg-white print:hidden fixed z-20" [mode]="'side'"
+<fuse-vertical-navigation class="bg-[#F4F6F9] group print:hidden fixed z-20" [mode]="'side'"
     [appearance]="isCollapsed ? 'dense' : 'default'" [name]="'naisoMainNavigation'" [navigation]="navigation"
     [opened]="!isScreenSmall">
     <!-- Navigation header hook -->
     <ng-container fuseVerticalNavigationContentHeader>
         <div class="flex w-full items-center p-4 pl-6">
-            <!-- Burger Icon Bro -->
-            <!-- <button mat-icon-button (click)="toggleCollapse()"> -->
-            <button mat-icon-button>
-                <mat-icon [svgIcon]="'heroicons_outline:bars-3'"></mat-icon>
-            </button>
+            <span class="text-xl font-normal group-hover:block hidden whitespace-nowrap leading-5 py-1">Notifikasi
+                Bar</span>
+            <mat-icon class="group-hover:hidden block" [svgIcon]="'heroicons_outline:bars-3'"></mat-icon>
         </div>
     </ng-container>
 </fuse-vertical-navigation>
@@ -67,11 +65,11 @@
                         <span *ngIf="!isPanelMenuCollapsed || isHovered" class="text-xl font-medium text-[#202124]">
                             Leads
                         </span>
-                        <button [matTooltip]="isPanelMenuCollapsed ? 'Open Menu' : 'Close Menu'" [ngClass]="{
+                        <button [matTooltip]="isPanelMenuCollapsed ? 'Expand' : 'Collapse'" [matTooltipPosition]="'after'" [ngClass]="{
                                 'rotate-180': isPanelMenuCollapsed
                             }" class="hover:bg-[#F4F6F9] p-2 shrink-0 transition-transform duration-300 ease-in-out"
                             (click)="panelMenuToggleCollapse()">
-                            <img src="icons/ic-panel-menu.svg" alt="Panel Menu Icon" class="w-4 h-4" />
+                            <mat-icon [svgIcon]="'ic-panel-menu'"></mat-icon>
                         </button>
                     </div>
                 </ng-container>

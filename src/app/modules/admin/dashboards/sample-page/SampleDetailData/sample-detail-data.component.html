@@ -1,40 +1,90 @@
-<div class="bg-card w-full flex flex-auto flex-col shadow xl:col-span-2 h-[calc(100vh-4rem)]">
-    <fuse-vertical-navigation class="bg-white print:hidden fixed top-16 right-0 z-[110] border-l-2" [mode]="'side'"
-        [appearance]="isPanelMenuCollapsed ? 'dense' : 'default'" [name]="'MenuNavigation'"
-        [navigation]="panelNavigation" [opened]="!isScreenSmall" [autoCollapse]="false" [position]="'right'">
-        <ng-container fuseVerticalNavigationHeader>
-            <div class="flex w-full items-center justify-between p-4 pl-6">
-                <span *ngIf="!isPanelMenuCollapsed || isHovered" class="text-xl font-medium text-[#202124]">
-                    Leads
-                </span>
-                <button [matTooltip]="isPanelMenuCollapsed ? 'Open Menu' : 'Close Menu'" [ngClass]="{
-                                'rotate-180': isPanelMenuCollapsed
-                            }" class="hover:bg-[#F4F6F9] p-2 shrink-0 transition-transform duration-300 ease-in-out"
-                    (click)="panelMenuToggleCollapse()">
-                    <img src="icons/ic-panel-menu.svg" alt="Panel Menu Icon" class="w-4 h-4" />
-                </button>
-            </div>
-        </ng-container>
-    </fuse-vertical-navigation>
+<div class="bg-card relative w-full flex flex-auto flex-row-reverse shadow xl:col-span-2 h-[calc(100vh-4rem)]">
+    <!-- Sidebar -->
+    <div class="bg-card flex h-dvh flex-col shadow transition-all duration-400 ease-in-out" [ngClass]="{
+          'w-16': !opened,
+          'w-96 sm:w-96 lg:w-80': opened,
+      }">
+        <div class="h-full">
+            <!-- Header -->
+            <div class="quick-chat-header h-14 flex flex-0 cursor-pointer items-center justify-start"
+                (click)="toggle()">
+                <!-- Toggle -->
+                @if (!opened) {
+                <div class="flex flex-auto border-none items-center justify-center">
+                    <div class="flex w-16 flex-0 items-center justify-center">
+                        <mat-icon class="icon-size-5" [svgIcon]="'ic-panel-menu'"></mat-icon>
+                    </div>
+                </div>
+                }
 
+                <!-- @if (opened) { -->
+                <div class="ml-3 flex flex-auto items-center">
+                    <div [ngClass]="{
+                        'opacity-100': opened,
+                        'opacity-0': !opened,
+                    }" class="ml-4 truncate text-lg font-medium leading-5">
+                        Activity
+                    </div>
+                    <button [ngClass]="{
+                        'opacity-100': opened,
+                        'opacity-0': !opened,
+                    }" class="ml-auto mr-4" mat-icon-button>
+                        <mat-icon class="icon-size-5 rotate-180" [svgIcon]="'ic-panel-menu'"></mat-icon>
+                    </button>
+                </div>
+                <!-- } -->
+            </div>
+
+            <!-- Placeholder -->
+            @if (!opened) {
+            <div class="flex flex-auto h-full items-center justify-center">
+                <div class="vertical-text text-secondary text-xl font-medium">
+                    Activity
+                </div>
+            </div>
+            }
+
+            <!-- Content -->
+            @if (opened) {
+            <div class="flex flex-auto h-full overflow-hidden">
+                <div class="flex flex-auto h-full pb-10 items-center gap-4 justify-center flex-col overflow-hidden">
+                    <img class="h-32 w-32 mb-3" [src]="'icons/img-empty-activity.png'" alt="Empty Activity" />
+                    <span class="text-[#404253] whitespace-nowrap font-medium">No Activity!</span>
+                    <p class="text-center text-[#5F6368] whitespace-nowrap">It seems that activity data is not <br>
+                        available at this time.</p>
+                    <button class="text-[#2C67F6] whitespace-nowrap">Add Activity</button>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+
+
+    <!-- Content Detail -->
     <div [ngClass]="{
         'w-[calc(100%-80px)]': isPanelMenuCollapsed,
         'w-[calc(100%-280px)]': !isPanelMenuCollapsed
-    }" class="">
+    }" class="flex-grow">
         <!-- header -->
-        <div class="text-[#5F6368] font-light w-full p-6 pb-0">
-            Sales Management / Leads / Registed / Detail
+        <div class="flex flex-row items-center w-full justify-between p-6 pb-2">
+            <div class="flex flex-row gap-2 items-center cursor-pointer" (click)="goBack()">
+                <mat-icon class="text-[#5F6368] icon-size-5" [svgIcon]="'heroicons_outline:arrow-left'"></mat-icon>
+                <span>Back to Registed</span>
+            </div>
+            <div class="text-[#5F6368]">
+                Sales Management / Leads / Registed / Detail
+            </div>
         </div>
 
         <!-- summary -->
         <div class="flex flex-row mt-4 px-6">
             <div class="flex flex-row items-center gap-4">
-                <div class="h-10 w-10 rounded-full bg-gray-400"></div>
+                <img class="h-20 w-20" src="icons/ic-profile.png" alt="profile" />
                 <div class="flex flex-col">
-                    <h2 class="text-xl font-medium">Asep Baharudin</h2>
-                    <div class="flex flex-row gap-5 items-center">
+                    <h2 class="text-xl text-[#202124] font-medium">Asep Baharudin</h2>
+                    <div class="flex flex-row gap-6 items-center">
                         <div class="flex flex-row gap-2 items-center">
-                            <div class="">Status</div>
+                            <div class="font-light">Status</div>
                             <div class="flex flex-row items-center gap-2">
                                 <div class="h-2 w-2 bg-[#2E58F0] rounded-full"></div>
                                 <span>Registed
@@ -42,10 +92,10 @@
                             </div>
                         </div>
                         <div class="flex flex-row gap-2 items-center">
-                            <div class="">Category</div>
+                            <div class="font-light">Category</div>
                             <div
-                                class="px-3 py-1 rounded-sm bg-[#EBF2FD] text-[#2E58F0] flex flex-row items-center gap-2">
-                                <img [src]="'icons/ic-cold.svg'" alt="Category Icon" class="w-4 h-4" />
+                                class="px-2 py-1 rounded-md bg-[#EBF2FD] text-[#2E58F0] flex flex-row items-center gap-1">
+                                <img [src]="'icons/ic-cold.svg'" alt="Category Icon" class="w-5 h-5" />
                                 <span>Cold</span>
                             </div>
                         </div>
@@ -54,16 +104,16 @@
             </div>
             <div class="ml-auto flex flex-row items-center gap-3">
                 <button mat-stroked-button [matTooltip]="'Edit Leads'"
-                    class="rounded-md aspect-square p-1 w-11 !min-w-11 !h-11 !min-h-11">
+                    class="rounded-md aspect-square p-1 w-10 !min-w-10 !h-10 !min-h-10">
                     <mat-icon class="icon-size-4" [svgIcon]="'heroicons_outline:pencil'"></mat-icon>
                 </button>
                 <button mat-stroked-button [matTooltip]="'Cancel Leads'"
-                    class="rounded-md py-1 px-2 gap-1 !h-11 !min-h-11">
+                    class="rounded-md py-1 px-2 gap-1 !h-10 !min-h-10">
                     <mat-icon class="icon-size-5" matPrefix [svgIcon]="'heroicons_outline:x-mark'"></mat-icon>
                     Cancel
                 </button>
                 <button
-                    class="bg-[#2E58F0] h-11 hover:bg-[#2048D8] rounded-md text-white flex flex-row items-center px-3">
+                    class="bg-[#2E58F0] h-10 hover:bg-[#2048D8] rounded-md text-white flex flex-row items-center px-3">
                     <mat-icon class="text-white icon-size-5" [svgIcon]="'heroicons_outline:plus'"></mat-icon>
                     <span class="ml-2 mr-1">Add Activity</span>
                 </button>
@@ -71,13 +121,62 @@
         </div>
 
         <!-- detail information -->
-        <div class="app-tabs">
-            <mat-tab-group mat-stretch-tabs="false" fitInkBarToContent mat-align-tabs="start">
-                <mat-tab label="First"> Content 1 </mat-tab>
-                <mat-tab label="Second"> Content 2 </mat-tab>
-                <mat-tab label="Third"> Content 3 </mat-tab>
-            </mat-tab-group>
-        </div>
+        <mat-tab-group class="app-tabs" animationDuration="0ms" mat-stretch-tabs="false" fitInkBarToContent
+            mat-align-tabs="start">
+            <mat-tab label="Leads">
+                <mat-card class="no-shadow">
+                    <mat-card-content>
+                        <div class="form-grid">
+                            <div>
+                                <span class="label">Branch</span>
+                                <span class="value">Bogor</span>
+                            </div>
+                            <div>
+                                <span class="label">Email</span>
+                                <span class="value">Asepbaharudingmail.com</span>
+                            </div>
+                            <div>
+                                <span class="label">Source</span>
+                                <span class="value">Instagram</span>
+                            </div>
+                            <div>
+                                <span class="label">Segmentation</span>
+                                <span class="value">Building</span>
+                            </div>
+                            <div>
+                                <span class="label">Company</span>
+                                <span class="value">PT Eiger Ekowisata Nusantara</span>
+                            </div>
+                            <div>
+                                <span class="label">Created By</span>
+                                <span class="value">Andi Malarangeng</span>
+                            </div>
+                            <div>
+                                <span class="label">Nama</span>
+                                <span class="value">Asep Baharudin</span>
+                            </div>
+                            <div>
+                                <span class="label">Created At</span>
+                                <span class="value">12/08/2025 | 13:00</span>
+                            </div>
+                            <div>
+                                <span class="label">Phone Number</span>
+                                <span class="value">08128271121</span>
+                            </div>
+                            <div>
+                                <span class="label">Issue</span>
+                                <span class="value">Lorem Ipsum is simply dummy text of the printing and typesetting
+                                    industry. Lorem Ipsum has been the industry’s</span>
+                            </div>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </mat-tab>
+            <mat-tab disabled label="Prospects">Prospects</mat-tab>
+            <mat-tab disabled label="Survey">Survey</mat-tab>
+            <mat-tab disabled label="Quotation">Quotation</mat-tab>
+            <mat-tab disabled label="Contract">Contract</mat-tab>
+        </mat-tab-group>
     </div>
 
 </div>

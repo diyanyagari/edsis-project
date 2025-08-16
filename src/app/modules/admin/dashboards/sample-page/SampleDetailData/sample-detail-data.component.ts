@@ -1,14 +1,20 @@
+import { ScrollStrategy, ScrollStrategyOptions } from '@angular/cdk/overlay';
 import { CdkScrollable } from '@angular/cdk/scrolling';
-import { NgClass } from '@angular/common';
+import { DOCUMENT, Location, NgClass, NgIf } from '@angular/common';
 import {
     ChangeDetectionStrategy,
     Component,
+    ElementRef,
+    Inject,
     OnDestroy,
     OnInit,
+    Renderer2,
     ViewChild,
     ViewEncapsulation,
 } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -21,27 +27,29 @@ import {
 } from '@fuse/components/navigation';
 import { FuseFindByKeyPipe } from '@fuse/pipes/find-by-key/find-by-key.pipe';
 import { Category, Course } from 'app/modules/admin/apps/academy/academy.types';
-import { MatFormFieldModule } from "@angular/material/form-field";
 
 @Component({
     selector: 'sample-detail-data',
     templateUrl: './sample-detail-data.component.html',
+    styleUrl: './sample-detail-data.component.scss',
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [
-    MatSidenavModule,
-    RouterLink,
-    MatIconModule,
-    NgClass,
-    MatButtonModule,
-    MatProgressBarModule,
-    CdkScrollable,
-    MatTabsModule,
-    FuseFindByKeyPipe,
-    FuseVerticalNavigationComponent,
-    MatTooltip,
-    MatFormFieldModule,
-],
+        MatSidenavModule,
+        RouterLink,
+        MatIconModule,
+        NgClass,
+        MatButtonModule,
+        MatProgressBarModule,
+        CdkScrollable,
+        MatTabsModule,
+        FuseFindByKeyPipe,
+        FuseVerticalNavigationComponent,
+        MatTooltip,
+        MatFormFieldModule,
+        NgIf,
+        MatCardModule,
+    ],
 })
 export class SampleDetailDataComponent implements OnInit, OnDestroy {
     @ViewChild('courseSteps', { static: true }) courseSteps: MatTabGroup;
@@ -53,18 +61,27 @@ export class SampleDetailDataComponent implements OnInit, OnDestroy {
     isPanelMenuCollapsed = false;
     isScreenSmall: boolean;
     isCollapsed = true;
+    isHovered = this.isPanelMenuCollapsed;
     panelNavigation: FuseNavigationItem[];
+    opened: boolean = true;
+    private _overlay: HTMLElement;
+    private _scrollStrategy: ScrollStrategy =
+        this._scrollStrategyOptions.block();
     // private _unsubscribeAll: Subject<any> = new Subject<any>();
 
     /**
      * Constructor
      */
-    constructor() // @Inject(DOCUMENT) private _document: Document,
-    // private _academyService: AcademyService,
-    // private _changeDetectorRef: ChangeDetectorRef,
-    // private _elementRef: ElementRef,
-    // private _fuseMediaWatcherService: FuseMediaWatcherService
-    {}
+    constructor(
+        @Inject(DOCUMENT) private _document: Document,
+        private _elementRef: ElementRef,
+        private location: Location,
+        private _renderer2: Renderer2,
+        private _scrollStrategyOptions: ScrollStrategyOptions
+    ) {
+        // private _elementRef: ElementRef, // private _changeDetectorRef: ChangeDetectorRef, // private _academyService: AcademyService, // @Inject(DOCUMENT) private _document: Document,
+        // private _fuseMediaWatcherService: FuseMediaWatcherService
+    }
 
     // -----------------------------------------------------------------------------------------------------
     // @ Lifecycle hooks
@@ -211,5 +228,122 @@ export class SampleDetailDataComponent implements OnInit, OnDestroy {
     // }
     panelMenuToggleCollapse(): void {
         this.isPanelMenuCollapsed = !this.isPanelMenuCollapsed;
+    }
+
+    goBack() {
+        this.location.back();
+    }
+
+    /**
+     * Open the panel
+     */
+    open(): void {
+        // Return if the panel has already opened
+        if (this.opened) {
+            return;
+        }
+
+        // Open the panel
+        this._toggleOpened(true);
+    }
+
+    /**
+     * Close the panel
+     */
+    close(): void {
+        // Return if the panel has already closed
+        if (!this.opened) {
+            return;
+        }
+
+        // Close the panel
+        this._toggleOpened(false);
+    }
+
+    /**
+     * Toggle the panel
+     */
+    toggle(): void {
+        if (this.opened) {
+            this.close();
+        } else {
+            this.open();
+        }
+    }
+
+    /**
+     * Show the backdrop
+     *
+     * @private
+     */
+    private _showOverlay(): void {
+        // Try hiding the overlay in case there is one already opened
+        this._hideOverlay();
+
+        // Create the backdrop element
+        this._overlay = this._renderer2.createElement('div');
+
+        // Return if overlay couldn't be create for some reason
+        if (!this._overlay) {
+            return;
+        }
+
+        // Add a class to the backdrop element
+        this._overlay.classList.add('quick-chat-overlay');
+
+        // Append the backdrop to the parent of the panel
+        this._renderer2.appendChild(
+            this._elementRef.nativeElement.parentElement,
+            this._overlay
+        );
+
+        // Enable block scroll strategy
+        this._scrollStrategy.enable();
+
+        // Add an event listener to the overlay
+        this._overlay.addEventListener('click', () => {
+            this.close();
+        });
+    }
+
+    /**
+     * Hide the backdrop
+     *
+     * @private
+     */
+    private _hideOverlay(): void {
+        if (!this._overlay) {
+            return;
+        }
+
+        // If the backdrop still exists...
+        if (this._overlay) {
+            // Remove the backdrop
+            this._overlay.parentNode.removeChild(this._overlay);
+            this._overlay = null;
+        }
+
+        // Disable block scroll strategy
+        this._scrollStrategy.disable();
+    }
+
+    /**
+     * Open/close the panel
+     *
+     * @param open
+     * @private
+     */
+    private _toggleOpened(open: boolean): void {
+        // Set the opened
+        this.opened = open;
+
+        // If the panel opens, show the overlay
+        if (open) {
+            this._showOverlay();
+        }
+        // Otherwise, hide the overlay
+        else {
+            this._hideOverlay();
+        }
     }
 }
