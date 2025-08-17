@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="250" height="250" viewBox="0 0 250 250">
+  <defs>
+    <clipPath id="clip-Arrow_Back">
+      <rect width="250" height="250"/>
+    </clipPath>
+  </defs>
+  <g id="Arrow_Back" data-name="Arrow Back" clip-path="url(#clip-Arrow_Back)">
+    <path id="arrow_back_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24" d="M212.749-675.883l77.228,77.228-19.652,19.307L160-689.674,270.326-800l19.652,19.307-77.228,77.229h167.9v27.581Z" transform="translate(-149.328 814.674)" fill="currentColor"/>
+  </g>
+</svg>

@@ -15,6 +15,25 @@
     white-space: nowrap;
 }
 
+.sample-table .action-column-header,
+.action-column-cell {
+  width: fit-content;
+  min-width: fit-content;
+  padding: 0 4px;
+}
+
+.sample-table .action-column-cell {
+  text-align: right;
+}
+
+.mat-sort-header-content {
+  font-size: 13px;
+}
+
+table td {
+  font-size: 13px;
+}
+
 .sample-table-wrapper {
     height: fit-content;
     overflow: auto;
@@ -23,6 +42,13 @@
 
 .sample-table {
     background-color: #f8fafc;
+}
+
+.sample-table .mat-mdc-header-cell,
+.sample-table .mat-mdc-cell,
+.sample-table .mat-mdc-footer-cell {
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
 }
 
 .sample-table .mat-mdc-table-sticky {

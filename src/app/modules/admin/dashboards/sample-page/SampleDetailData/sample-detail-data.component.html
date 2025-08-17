@@ -46,7 +46,7 @@
 
             <!-- Content -->
             @if (opened) {
-            <div class="flex flex-auto h-full overflow-hidden">
+            <!-- <div class="flex flex-auto h-full overflow-hidden">
                 <div class="flex flex-auto h-full pb-10 items-center gap-4 justify-center flex-col overflow-hidden">
                     <img class="h-32 w-32 mb-3" [src]="'icons/img-empty-activity.png'" alt="Empty Activity" />
                     <span class="text-[#404253] whitespace-nowrap font-medium">No Activity!</span>
@@ -54,6 +54,13 @@
                         available at this time.</p>
                     <button class="text-[#2C67F6] whitespace-nowrap">Add Activity</button>
                 </div>
+            </div> -->
+            <div class="flex flex-auto h-[calc(100%-15rem)] items-center justify-center gap-4 flex-col overflow-hidden">
+                <img class="h-32 w-32 mb-3" [src]="'icons/img-empty-activity.png'" alt="Empty Activity" />
+                <span class="text-[#202124] text-lg whitespace-nowrap font-medium">No Activity!</span>
+                <p class="text-center text-[#5F6368] whitespace-nowrap">It seems that activity data is not <br>
+                    available at this time.</p>
+                <button class="text-[#2C67F6] whitespace-nowrap">Add Activity</button>
             </div>
             }
         </div>
@@ -66,10 +73,10 @@
         'w-[calc(100%-280px)]': !isPanelMenuCollapsed
     }" class="flex-grow">
         <!-- header -->
-        <div class="flex flex-row items-center w-full justify-between p-6 pb-2">
+        <div class="flex text-md flex-row items-center w-full justify-between p-6 pb-2">
             <div class="flex flex-row gap-2 items-center cursor-pointer" (click)="goBack()">
-                <mat-icon class="text-[#5F6368] icon-size-5" [svgIcon]="'heroicons_outline:arrow-left'"></mat-icon>
-                <span>Back to Registed</span>
+                <mat-icon class="text-[#5F6368] icon-size-5" [svgIcon]="'ic-arrow-back'"></mat-icon>
+                <span class="text-[#5F6368]">Back to Registed</span>
             </div>
             <div class="text-[#5F6368]">
                 Sales Management / Leads / Registed / Detail
@@ -81,13 +88,13 @@
             <div class="flex flex-row items-center gap-4">
                 <img class="h-20 w-20" src="icons/ic-profile.png" alt="profile" />
                 <div class="flex flex-col">
-                    <h2 class="text-xl text-[#202124] font-medium">Asep Baharudin</h2>
-                    <div class="flex flex-row gap-6 items-center">
+                    <h2 class="text-2xl text-[#202124] font-medium">Asep Baharudin</h2>
+                    <div class="flex text-md flex-row gap-6 items-center">
                         <div class="flex flex-row gap-2 items-center">
-                            <div class="font-light">Status</div>
+                            <div class="font-light text-[#5F6368]">Status</div>
                             <div class="flex flex-row items-center gap-2">
                                 <div class="h-2 w-2 bg-[#2E58F0] rounded-full"></div>
-                                <span>Registed
+                                <span class="text-[#5F6368]">Registed
                                 </span>
                             </div>
                         </div>
@@ -105,23 +112,23 @@
             <div class="ml-auto flex flex-row items-center gap-3">
                 <button mat-stroked-button [matTooltip]="'Edit Leads'"
                     class="rounded-md aspect-square p-1 w-10 !min-w-10 !h-10 !min-h-10">
-                    <mat-icon class="icon-size-4" [svgIcon]="'heroicons_outline:pencil'"></mat-icon>
+                    <mat-icon class="icon-size-5" [svgIcon]="'ic-edit'"></mat-icon>
                 </button>
                 <button mat-stroked-button [matTooltip]="'Cancel Leads'"
-                    class="rounded-md py-1 px-2 gap-1 !h-10 !min-h-10">
-                    <mat-icon class="icon-size-5" matPrefix [svgIcon]="'heroicons_outline:x-mark'"></mat-icon>
+                    class="rounded-md text-md py-1 px-2 gap-1 !h-10 !min-h-10">
+                    <mat-icon class="icon-size-5" matPrefix [svgIcon]="'ic-cancel'"></mat-icon>
                     Cancel
                 </button>
                 <button
-                    class="bg-[#2E58F0] h-10 hover:bg-[#2048D8] rounded-md text-white flex flex-row items-center px-3">
-                    <mat-icon class="text-white icon-size-5" [svgIcon]="'heroicons_outline:plus'"></mat-icon>
+                    class="bg-[#2E58F0] text-md h-10 hover:bg-[#2048D8] rounded-md text-white flex flex-row items-center px-3">
+                    <mat-icon class="text-white icon-size-5" [svgIcon]="'ic-add'"></mat-icon>
                     <span class="ml-2 mr-1">Add Activity</span>
                 </button>
             </div>
         </div>
 
         <!-- detail information -->
-        <mat-tab-group class="app-tabs" animationDuration="0ms" mat-stretch-tabs="false" fitInkBarToContent
+        <mat-tab-group class="app-tabs text-md" animationDuration="0ms" mat-stretch-tabs="false" fitInkBarToContent
             mat-align-tabs="start">
             <mat-tab label="Leads">
                 <mat-card class="no-shadow">

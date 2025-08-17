@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="250" height="250" viewBox="0 0 250 250">
+  <defs>
+    <clipPath id="clip-Edit_Leads">
+      <rect width="250" height="250"/>
+    </clipPath>
+  </defs>
+  <g id="Edit_Leads" data-name="Edit Leads" clip-path="url(#clip-Edit_Leads)">
+    <g id="Group_35960" data-name="Group 35960" transform="translate(32.992 39.151)">
+      <path id="edit" d="M139.078-687.38H152.67l93.241-93.242-13.593-13.592-93.241,93.241ZM120-668.3v-40.54L245.911-834.516a21.4,21.4,0,0,1,6.32-4.053A18.83,18.83,0,0,1,259.5-840a19.727,19.727,0,0,1,7.393,1.431,16.743,16.743,0,0,1,6.2,4.29l13.116,13.356a15.583,15.583,0,0,1,4.173,6.2,20.659,20.659,0,0,1,1.311,7.154,20.326,20.326,0,0,1-1.311,7.273,17.863,17.863,0,0,1-4.173,6.319L160.54-668.3ZM272.62-807.569l-13.354-13.353ZM239-787.3l-6.677-6.916,13.593,13.592Z" transform="translate(-120 840)" fill="currentColor"/>
+    </g>
+  </g>
+</svg>

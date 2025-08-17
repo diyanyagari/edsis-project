@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="250" height="250" viewBox="0 0 250 250">
+  <defs>
+    <clipPath id="clip-Add">
+      <rect width="250" height="250"/>
+    </clipPath>
+  </defs>
+  <g id="Add" clip-path="url(#clip-Add)">
+    <path id="add_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24" d="M290.718-639.042H200V-669.28h90.718V-760h30.24v90.72h90.718v30.239H320.958v90.717h-30.24Z" transform="translate(-180.838 779.163)" fill="currentColor"/>
+  </g>
+</svg>

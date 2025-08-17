@@ -1,6 +1,7 @@
 <div class="bg-card relative w-full flex flex-auto flex-row-reverse shadow xl:col-span-2 h-[calc(100vh-4rem)]">
     <!-- Sidebar -->
-    <div class="bg-card flex h-dvh flex-col shadow transition-all duration-400 ease-in-out" [ngClass]="{
+    <div class="bg-card flex h-dvh flex-col shadow-[inset_1px_0_0_#D9DDE6] transition-all duration-400 ease-in-out"
+        [ngClass]="{
           'w-16': !opened,
           'w-96 sm:w-96 lg:w-80': opened,
       }">
@@ -78,12 +79,14 @@
                                 } -->
 
                             <!-- Activity -->
-                            <li class="relative flex py-7">
+                            <li [ngClass]="{
+                                'pt-4': first
+                            }" class="relative flex py-7">
                                 <!-- Line -->
                                 <div [ngClass]="{
                                     'h-dvh': last,
                                     'h-full': !last,
-                                }" class="absolute left-16 top-7 -ml-px w-0.5 bg-[#2E58F0]">
+                                }" class="absolute left-16 top-7 -ml-px w-[1px] bg-[#2E58F0]">
                                 </div>
 
                                 <div class="relative flex flex-auto">
@@ -98,10 +101,10 @@
                                     </div>
                                     <div class="flex flex-col gap-2 min-w-44">
                                         <span
-                                            class="text-[#2E58F0] w-fit py-0.5 px-1.5 text-md rounded-md bg-[#EBF2FD]">Calling</span>
+                                            class="text-[#2E58F0] w-fit py-0.5 px-1.5 text-md rounded-sm bg-[#EBF2FD]">Calling</span>
                                         <div class="flex flex-col gap-3 flex-shrink-0 text-[#202124]">
                                             <label class="font-medium">{{activity.name}}</label>
-                                            <p>{{activity.description}}</p>
+                                            <p class="text-md">{{activity.description}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -122,10 +125,10 @@
         'w-[calc(100%-280px)]': !isPanelMenuCollapsed
     }" class="flex-grow">
         <!-- header -->
-        <div class="flex flex-row items-center w-full justify-between p-6 pb-2">
+        <div class="flex text-md flex-row items-center w-full justify-between p-6 pb-2">
             <div class="flex flex-row gap-2 items-center cursor-pointer" (click)="goBack()">
-                <mat-icon class="text-[#5F6368] icon-size-5" [svgIcon]="'heroicons_outline:arrow-left'"></mat-icon>
-                <span>Back to follow up</span>
+                <mat-icon class="text-[#5F6368] icon-size-5" [svgIcon]="'ic-arrow-back'"></mat-icon>
+                <span class="text-[#5F6368]">Back to follow up</span>
             </div>
             <div class="text-[#5F6368]">
                 Sales Management / Leads / Follow Up / Detail
@@ -137,13 +140,13 @@
             <div class="flex flex-row items-center gap-4">
                 <img class="h-20 w-20" src="icons/ic-profile.png" alt="profile" />
                 <div class="flex flex-col">
-                    <h2 class="text-xl text-[#202124] font-medium">Asep Baharudin</h2>
-                    <div class="flex flex-row gap-6 items-center">
+                    <h2 class="text-2xl text-[#202124] font-medium">Asep Baharudin</h2>
+                    <div class="flex text-md flex-row gap-6 items-center">
                         <div class="flex flex-row gap-2 items-center">
-                            <div class="font-light">Status</div>
+                            <div class="font-light text-[#5F6368]">Status</div>
                             <div class="flex flex-row items-center gap-2">
                                 <div class="h-2 w-2 bg-[#f0a62e] rounded-full"></div>
-                                <span>Follow Up
+                                <span class="text-[#5F6368]">Follow Up
                                 </span>
                             </div>
                         </div>
@@ -161,26 +164,26 @@
             <div class="ml-auto flex flex-row items-center gap-3">
                 <button mat-stroked-button [matTooltip]="'Edit Leads'"
                     class="rounded-md aspect-square p-1 w-10 !min-w-10 !h-10 !min-h-10">
-                    <mat-icon class="icon-size-4" [svgIcon]="'heroicons_outline:pencil'"></mat-icon>
+                    <mat-icon class="icon-size-5" [svgIcon]="'ic-edit'"></mat-icon>
                 </button>
                 <button mat-stroked-button [matTooltip]="'Cancel Leads'"
-                    class="rounded-md py-1 px-2 gap-1 !h-10 !min-h-10">
-                    <mat-icon class="icon-size-5" matPrefix [svgIcon]="'heroicons_outline:x-mark'"></mat-icon>
+                    class="rounded-md text-md py-1 px-2 gap-1 !h-10 !min-h-10">
+                    <mat-icon class="icon-size-5" matPrefix [svgIcon]="'ic-cancel'"></mat-icon>
                     Cancel
                 </button>
                 <button
-                    class="bg-[#2E58F0] h-10 hover:bg-[#2048D8] rounded-md text-white flex flex-row items-center px-3">
-                    <mat-icon class="text-white icon-size-5" [svgIcon]="'heroicons_outline:plus'"></mat-icon>
+                    class="bg-[#2E58F0] text-md h-10 hover:bg-[#2048D8] rounded-md text-white flex flex-row items-center px-3">
+                    <mat-icon class="text-white icon-size-5" [svgIcon]="'ic-add'"></mat-icon>
                     <span class="ml-2 mr-1">Add Activity</span>
                 </button>
             </div>
         </div>
 
         <!-- detail information -->
-        <mat-tab-group class="app-tabs" animationDuration="0ms" mat-stretch-tabs="false" fitInkBarToContent
+        <mat-tab-group class="app-tabs text-md" animationDuration="0ms" mat-stretch-tabs="false" fitInkBarToContent
             mat-align-tabs="start">
             <mat-tab label="Leads">
-                <mat-card class="no-shadow">
+                <mat-card class="no-shadow p-0">
                     <mat-card-content>
                         <div class="form-grid">
                             <div>

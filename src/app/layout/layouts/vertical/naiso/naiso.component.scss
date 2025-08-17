@@ -3,8 +3,10 @@
 }
 
 .fuse-vertical-navigation-item.fuse-vertical-navigation-item-active {
-    background-color: #EBF2FD !important; /* dark gray background */
-    color: #2E58F0 !important;           /* yellow text */
+    background-color: #EBF2FD !important;
+    /* dark gray background */
+    color: #2E58F0 !important;
+    /* yellow text */
     // border-left: 4px solid #fbbf24; /* custom indicator */
 }
 
@@ -12,3 +14,36 @@
 .fuse-vertical-navigation-item.fuse-vertical-navigation-item-active mat-icon {
     color: #2E58F0 !important;
 }
+
+.notification-navbar .fuse-vertical-navigation-wrapper {
+    box-shadow: none;
+}
+
+.menu-navbar .fuse-vertical-navigation-wrapper {
+    box-shadow: inset -2px 0 0 #D9DDE6;
+}
+
+.menu-navbar-fuse-wrapper fuse-vertical-navigation {
+    min-width: 235px;
+    max-width: 235px;
+}
+
+.menu-navbar-fuse-wrapper {
+  --fuse-vertical-navigation-width: 235px;
+  --fuse-vertical-navigation-collapsed-width: 80px;
+}
+
+/* Custom Fuse Inactive items only */
+// .notification-navbar-fuse-wrapper .fuse-vertical-navigation-item:not(.fuse-vertical-navigation-item-active),
+// .menu-navbar-fuse-wrapper .fuse-vertical-navigation-item:not(.fuse-vertical-navigation-item-active) {
+//   color: red !important;
+// }
+
+// .notification-navbar-fuse-wrapper 
+// .fuse-vertical-navigation-item:not(.fuse-vertical-navigation-item-active) 
+// .fuse-vertical-navigation-item-icon,
+// .menu-navbar-fuse-wrapper 
+// .fuse-vertical-navigation-item:not(.fuse-vertical-navigation-item-active) 
+// .fuse-vertical-navigation-item-icon {
+//   color: red !important;
+// }

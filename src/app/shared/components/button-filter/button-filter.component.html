@@ -1,5 +1,5 @@
 <button mat-stroked-button [disabled]="disable"
-    class="rounded-md btn-filter  flex flex-row items-center gap-2 h-full px-4" [ngClass]="{
+    class="rounded-md btn-filter text-md flex flex-row items-center gap-2 h-full px-4" [ngClass]="{
         'bg-[#EBF2FD] border-[1px] border-[#2C67F6] text-[#2C67F6]' :isActive,
         'bg-white text-[#5B6B79]' :!isActive
     }" (click)="openPanel()" #filterOrigin>

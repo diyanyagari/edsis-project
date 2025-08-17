@@ -150,5 +150,20 @@ export class IconsService {
             'ic-calendar',
             domSanitizer.bypassSecurityTrustResourceUrl('icons/ic-calendar.svg')
         );
+
+        matIconRegistry.addSvgIcon(
+            'ic-edit',
+            domSanitizer.bypassSecurityTrustResourceUrl('icons/ic-edit.svg')
+        );
+
+        matIconRegistry.addSvgIcon(
+            'ic-arrow-back',
+            domSanitizer.bypassSecurityTrustResourceUrl('icons/ic-arrow-back.svg')
+        );
+
+        matIconRegistry.addSvgIcon(
+            'ic-add',
+            domSanitizer.bypassSecurityTrustResourceUrl('icons/ic-add.svg')
+        );
     }
 }
